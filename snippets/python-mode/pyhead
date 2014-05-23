@@ -1,0 +1,7 @@
+# name: Python head using UTF-8
+# key: pyhead
+# group : temp
+# --
+
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
