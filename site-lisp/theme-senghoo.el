@@ -34,6 +34,9 @@
   :group 'theme-senghoo)
 
 (require 'powerline)
+
+
+
 (defun powerline-senghoo-theme ()
   "Setup the default mode-line."
   (interactive)
@@ -48,11 +51,15 @@
                                                            powerline-default-separator
                                                            (cdr powerline-default-separator-dir))))
                           (lhs (list (powerline-raw "%*" 'powerline-senghoo-1 'l)
+                                     ;; (powerline-raw evil-mode-line-tag 'powerline-senghoo-1 'l)
+                                     ;; (powerline-raw
+                                     ;;  (eval (evil-state-property evil-state :name))
+                                     ;;  'powerline-senghoo-1 'l)
                                      (powerline-major-mode 'powerline-senghoo-1 'l)
-                                     (powerline-raw mode-line-mule-info 'powerline-senghoo-1 'l)
+                                     (powerline-raw " " 'powerline-senghoo-1 'l)
                                      (powerline-raw "%b " 'powerline-senghoo-2 'l)
                                      (powerline-vc 'powerline-senghoo-3 'r)))
-                          (rhs (list 
+                          (rhs (list
                                      (powerline-process 'powerline-senghoo-4)
                                      (powerline-raw " %3p of %I" 'powerline-senghoo-5 'r)
                                      (powerline-raw "%3l" 'powerline-senghoo-6 'l)

@@ -46,7 +46,7 @@
 (require 'init-lang-html)
 (require 'init-lang-elisp)
 ;; some emacs toy
-(require 'init-happy)
+(require 'init-toy)
 (require 'init-clippy)
 
 ;;----------------------------------------------------------------------------

@@ -66,7 +66,7 @@
 (global-set-key (kbd "C-c c e") 'mc/edit-ends-of-lines)
 (global-set-key (kbd "C-c c a") 'mc/edit-beginnings-of-lines)
 
-(global-set-key (kbd "C-z") 'repeat)
+(global-set-key (kbd "C-x C-z") 'repeat)
 (setq highlight-symbol-on-navigation-p t)
 (global-set-key (kbd "M-n") 'highlight-symbol-next)
 (global-set-key (kbd "M-p") 'highlight-symbol-prev)
@@ -74,16 +74,15 @@
 ;; Train myself to use M-f and M-b instead
 (global-unset-key [M-left])
 (global-unset-key [M-right])
-
+(global-unset-key (kbd "C-x z"))
 
 ;; visual regexp
 (require 'visual-regexp-steroids)
 (define-key global-map (kbd "C-c r") 'vr/replace)
 (define-key global-map (kbd "C-c q") 'vr/query-replace)
 ;; if you use multiple-cursors, this is for you:
-(define-key global-map (kbd "C-c m") 'vr/mc-mark)
-(define-key global-map (kbd "C-r") 'vr/isearch-backward)
-(define-key global-map (kbd "C-s") 'vr/isearch-forward)
+;; (define-key global-map (kbd "C-r") 'vr/isearch-backward)
+;; (define-key global-map (kbd "C-s") 'vr/isearch-forward)
 ;; to use visual-regexp-steroids's isearch instead of the built-in regexp isearch, also include the following lines:
 (define-key esc-map (kbd "C-r") 'vr/isearch-backward) ;; C-M-r
 (define-key esc-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s

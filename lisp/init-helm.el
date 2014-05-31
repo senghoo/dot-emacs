@@ -1,3 +1,12 @@
 (helm-mode 1)
 (set-face-attribute 'helm-ff-directory nil :foreground "white" :background "blue")
+(require 'helm-config)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
+(global-set-key (kbd "M-t") 'helm-for-files)
+(global-set-key (kbd "C-`") 'helm-locate)
+(define-key helm-map (kbd "C-2") 'helm-toggle-visible-mark)
+
+(setq helm-locate-command "mdfind %s %s")
 (provide 'init-helm)

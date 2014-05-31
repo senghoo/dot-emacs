@@ -8,7 +8,7 @@
         default-tab-width 8
         indent-tabs-mode nil
         c-basic-offset 8
-        c-default-style "linux"
+        c-default-style "k&r"
         c-electric-flag nil
         c-tab-always-indent nil
         c-insert-tab-function 'indent-for-tab-command
