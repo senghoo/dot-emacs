@@ -56,6 +56,8 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
+
+(require 'cl)
 ;; Local Variables:
 ;; coding: utf-8
 ;; End:

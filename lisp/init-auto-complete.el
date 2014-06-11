@@ -1,17 +1,18 @@
 (require 'auto-complete-config)
 (ac-config-default)
-(global-auto-complete-mode t)
 (setq-default ac-expand-on-auto-complete nil)
 (setq-default ac-auto-start nil)
-(setq-default ac-dwim nil) ; To get pop-ups with docs even if a word is uniquely completed
+(setq-default ac-dwim t)
 (add-to-list 'completion-styles 'initials t)
 (set-default 'ac-sources
-             '(ac-source-imenu
+             '(ac-source-abbrev
+               ac-source-imenu
                ac-source-yasnippet
                ac-source-dictionary
                ac-source-filename
                ac-source-words-in-same-mode-buffers
                ))
+
 (setq tab-always-indent 'complete)  ;; use 't when auto-complete is disabled
 
 ;; hook AC into completion-at-point
