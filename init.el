@@ -40,14 +40,13 @@
 (require 'init-auto-complete)
 (require 'init-yasnippet)
 ;;lang support
+(require 'init-slime)
 (require 'init-lang-python)
 (require 'init-lang-cc)
-(require 'init-slime)
 (require 'init-lang-html)
 (require 'init-lang-elisp)
 ;; some emacs toy
 (require 'init-toy)
-(require 'init-clippy)
 
 ;;----------------------------------------------------------------------------
 ;; Variables configured via the interactive 'customize' interface
