@@ -3,6 +3,8 @@
 (setq-default ac-expand-on-auto-complete nil)
 (setq-default ac-auto-start nil)
 (setq-default ac-dwim t)
+(ac-set-trigger-key "TAB")
+
 (add-to-list 'completion-styles 'initials t)
 (set-default 'ac-sources
              '(ac-source-abbrev

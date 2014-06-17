@@ -19,6 +19,7 @@
   (jedi:setup)
   (setq jedi:complete-on-dot t)
   (setq jedi:install-imenu t)
+  (setq jedi:tooltip-method '(popup))
   (local-set-key (kbd "M-.") 'jedi:goto-definition)
   (local-set-key (kbd "M-,") 'jedi:goto-definition-pop-marker)
   (local-set-key (kbd "M-?") 'jedi:show-doc)
