@@ -6,6 +6,7 @@
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "M-t") 'helm-for-files)
 (global-set-key (kbd "C-`") 'helm-locate)
+(global-set-key (kbd "C-c C-j") 'imenu)
 (define-key helm-map (kbd "C-2") 'helm-toggle-visible-mark)
 
 (setq helm-locate-command "mdfind %s %s")

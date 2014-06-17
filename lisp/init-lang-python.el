@@ -15,16 +15,17 @@
 
 
 
-(defun jedi-config:setup-keys ()
+(defun jedi-config:setup ()
   (jedi:setup)
   (setq jedi:complete-on-dot t)
+  (setq jedi:install-imenu t)
   (local-set-key (kbd "M-.") 'jedi:goto-definition)
   (local-set-key (kbd "M-,") 'jedi:goto-definition-pop-marker)
   (local-set-key (kbd "M-?") 'jedi:show-doc)
   (local-set-key (kbd "M-/") 'jedi:get-in-function-call))
 
 
-(add-hook 'python-mode-hook 'jedi-config:setup-keys)
+(add-hook 'python-mode-hook 'jedi-config:setup)
 (add-hook 'python-mode-hook 'jedi-config:server-setup)
 (add-hook 'jedi-mode-hook 'jedi-direx:setup)
 
