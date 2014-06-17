@@ -24,7 +24,7 @@
 
 
 ;;; On-demand installation of packages
-
+(require 'cl)
 (defvar prelude-packages '(ace-jump-mode
                            auto-complete
                            auto-complete-clang
@@ -60,6 +60,7 @@
                            slime
                            undo-tree
                            visual-regexp
+                           visual-regexp-steroids
                            web-mode
                            wgrep
                            xcscope
@@ -73,6 +74,8 @@
         when (not (package-installed-p p)) do (return nil)
         finally (return t)))
 
+
+(package-initialize)
 (unless (prelude-packages-installed-p)
   ;; check for new packages (package versions)
   (message "%s" "Emacs Prelude is now refreshing its package database...")
@@ -83,7 +86,7 @@
     (when (not (package-installed-p p))
       (package-install p))))
 
-(package-initialize)
+
 
 
 (provide 'init-elpa)
