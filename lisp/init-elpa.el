@@ -65,7 +65,8 @@
                            wgrep
                            xcscope
                            yaml-mode
-                           yasnippet)
+                           yasnippet
+                           popwin)
   "A list of packages to ensure are installed at launch.")
 
 

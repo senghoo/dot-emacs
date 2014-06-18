@@ -23,7 +23,8 @@
   (local-set-key (kbd "M-.") 'jedi:goto-definition)
   (local-set-key (kbd "M-,") 'jedi:goto-definition-pop-marker)
   (local-set-key (kbd "M-?") 'jedi:show-doc)
-  (local-set-key (kbd "M-/") 'jedi:get-in-function-call))
+  (local-set-key (kbd "M-'") 'jedi:get-in-function-call)
+  (local-set-key (kbd "M-/") 'helm-jedi-related-names))
 
 
 (add-hook 'python-mode-hook 'jedi-config:setup)
