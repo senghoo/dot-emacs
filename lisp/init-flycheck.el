@@ -4,7 +4,8 @@
   (setq flycheck-check-syntax-automatically '(save idle-change mode-enabled)
         flycheck-tip-avoid-show-func nil
         flycheck-idle-change-delay 0.8
-        flycheck-display-errors-function 'flycheck-clippy-show-error-messages))
+        flycheck-display-errors-function 'flycheck-clippy-show-error-messages
+        flycheck-flake8-maximum-line-length 120))
 
 (add-hook 'flycheck-mode-hook 'my-flycheck-mode-hook)
 
