@@ -14,23 +14,23 @@
     (when args (set (make-local-variable 'jedi:server-args) args))))
 
 
-
+(require 'jedi)
 (defun jedi-config:setup ()
   (jedi:setup)
-  (setq jedi:complete-on-dot t)
-  (setq jedi:install-imenu t)
-  (setq jedi:tooltip-method '(popup))
   (local-set-key (kbd "M-.") 'jedi:goto-definition)
   (local-set-key (kbd "M-,") 'jedi:goto-definition-pop-marker)
   (local-set-key (kbd "M-?") 'jedi:show-doc)
   (local-set-key (kbd "M-'") 'jedi:get-in-function-call)
   (local-set-key (kbd "M-/") 'helm-jedi-related-names))
 
-
-(add-hook 'python-mode-hook 'jedi-config:setup)
-(add-hook 'python-mode-hook 'jedi-config:server-setup)
+(add-hook 'python-mode-hook 'jedi:setup)
+(add-hook 'jedi-mode-hook 'jedi-config:server-setup)
+(add-hook 'jedi-mode-hook 'jedi-config:setup)
 (add-hook 'jedi-mode-hook 'jedi-direx:setup)
 
-
+;; jedi
+(setq jedi:complete-on-dot t)
+(setq jedi:install-imenu t)
+(setq jedi:tooltip-method '(popup))
 
 (provide 'init-lang-python)
