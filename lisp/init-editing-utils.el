@@ -34,6 +34,7 @@
 (global-undo-tree-mode)
 (global-linum-mode)
 (highlight-symbol-mode)
+(global-hl-line-mode)
 (setq-default initial-scratch-message
               (concat ";; Happy hacking Senghoo !\n\n"))
 ;;----------------------------------------------------------------------------
