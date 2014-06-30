@@ -8,6 +8,8 @@
 (global-set-key (kbd "C-`") 'helm-locate)
 (global-set-key (kbd "C-c C-j") 'imenu)
 (define-key helm-map (kbd "C-2") 'helm-toggle-visible-mark)
+(define-key helm-map (kbd "C-j") 'helm-execute-persistent-action)
+(define-key helm-map (kbd "C-z") 'helm-select-3rd-action)
 
 (setq helm-locate-command "mdfind %s %s")
 (provide 'init-helm)

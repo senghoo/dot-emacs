@@ -13,10 +13,10 @@
     (when cmds (set (make-local-variable 'jedi:server-command) cmds))
     (when args (set (make-local-variable 'jedi:server-args) args))))
 
+;; jedi setup
 
 (require 'jedi)
 (defun jedi-config:setup ()
-  (jedi:setup)
   (local-set-key (kbd "M-.") 'jedi:goto-definition)
   (local-set-key (kbd "M-,") 'jedi:goto-definition-pop-marker)
   (local-set-key (kbd "M-?") 'jedi:show-doc)
@@ -24,8 +24,8 @@
   (local-set-key (kbd "M-/") 'helm-jedi-related-names))
 
 (add-hook 'python-mode-hook 'jedi:setup)
-(add-hook 'jedi-mode-hook 'jedi-config:server-setup)
-(add-hook 'jedi-mode-hook 'jedi-config:setup)
+(add-hook 'python-mode-hook 'jedi-config:server-setup)
+(add-hook 'python-mode-hook 'jedi-config:setup)
 (add-hook 'jedi-mode-hook 'jedi-direx:setup)
 
 ;; jedi
