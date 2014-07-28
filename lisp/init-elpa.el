@@ -66,7 +66,9 @@
                            xcscope
                            yaml-mode
                            yasnippet
-                           popwin)
+                           popwin
+                           php-mode
+                           php-extras)
   "A list of packages to ensure are installed at launch.")
 
 

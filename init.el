@@ -45,6 +45,7 @@
 (require 'init-lang-cc)
 (require 'init-lang-html)
 (require 'init-lang-elisp)
+(require 'init-lang-php)
 ;; some emacs toy
 (require 'init-toy)
 
