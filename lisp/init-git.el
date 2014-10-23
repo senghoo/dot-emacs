@@ -1,3 +1,5 @@
+(require 'git-gutter-fringe+)
+(global-git-gutter+-mode t)
 (setq-default
  magit-save-some-buffers nil
  magit-process-popup-time 10

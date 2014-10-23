@@ -1,9 +1,3 @@
-;; (setq sml/theme 'dark)
-;; (sml/setup)
-;; (powerline-default-theme)
-;; (powerline-theme-senghoo)
-;; (set-face-attribute 'modeline-buffer-id nil
-;;                     :foreground "#005f00")
 (require 'theme-senghoo)
 (global-rainbow-delimiters-mode)
 (powerline-senghoo-theme)

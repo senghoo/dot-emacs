@@ -34,6 +34,7 @@
 (require 'init-fonts)
 (require 'init-editing-utils)
 (require 'init-projectile)
+(require 'init-quickrun)
 ;; (require 'init-evil)
 ;;develop tools
 (require 'init-git)

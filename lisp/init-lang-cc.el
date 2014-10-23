@@ -13,7 +13,7 @@
         c-tab-always-indent nil
         c-insert-tab-function 'indent-for-tab-command)
   (c-toggle-auto-hungry-state 1)
-  (c-toggle-auto-newline nil)
+  ;; (c-toggle-auto-newline nil)
   (global-ede-mode ))
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)

@@ -4,15 +4,6 @@
   '(define-key python-mode-map "\C-cx" 'jedi-direx:pop-to-buffer))
 
 
-(defun jedi-config:server-setup ()
-  (require 'pyvenv)
-  (let ((cmds)
-        (args))
-    (if (ignore-errors (member (projectile-project-name) (pyvenv-virtualenv-list)))
-        (setq args (append args `("--virtual-env" ,(expand-file-name (projectile-project-name) "~/.virtualenvs/")))))
-    (when cmds (set (make-local-variable 'jedi:server-command) cmds))
-    (when args (set (make-local-variable 'jedi:server-args) args))))
-
 ;; jedi setup
 
 (require 'jedi)
@@ -24,7 +15,6 @@
   (local-set-key (kbd "M-/") 'helm-jedi-related-names))
 
 (add-hook 'python-mode-hook 'jedi:setup)
-(add-hook 'python-mode-hook 'jedi-config:server-setup)
 (add-hook 'python-mode-hook 'jedi-config:setup)
 (add-hook 'jedi-mode-hook 'jedi-direx:setup)
 
