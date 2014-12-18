@@ -8,6 +8,8 @@
 
 (require 'jedi)
 (defun jedi-config:setup ()
+  ;; face
+  (set-face-attribute 'jedi:highlight-function-argument t :foreground "Blue")
   (local-set-key (kbd "M-.") 'jedi:goto-definition)
   (local-set-key (kbd "M-,") 'jedi:goto-definition-pop-marker)
   (local-set-key (kbd "M-?") 'jedi:show-doc)
@@ -21,7 +23,8 @@
 ;; jedi
 (setq jedi:complete-on-dot t)
 (setq jedi:install-imenu t)
-(setq jedi:tooltip-method '(popup))
+(setq jedi:tooltip-method nil)
+
 
 
 ;; ipython

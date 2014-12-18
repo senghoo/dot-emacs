@@ -5,6 +5,8 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "C-`") 'helm-locate)
+(global-set-key (kbd "M-g l") 'helm-locate)
+(global-set-key (kbd "M-g p") 'helm-do-grep)
 (define-key helm-map (kbd "C-2") 'helm-toggle-visible-mark)
 (define-key helm-map (kbd "C-j") 'helm-execute-persistent-action)
 (define-key helm-map (kbd "C-z") 'helm-select-3rd-action)

@@ -63,7 +63,7 @@ def message(msg):
 if argv[1] == 'matches':
     # output positions of matches
 
-    regexp = parse_arg('--regexp')
+    regexp = "(?i)" + parse_arg('--regexp')
     region = sys.stdin.read()
 
     if not PY3:

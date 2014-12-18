@@ -1,5 +1,5 @@
 (require 'theme-senghoo)
-(global-rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+(add-hook 'rainbow-delimiters-mode-hook #'theme-senghoo-color)
 (powerline-senghoo-theme)
-(theme-senghoo-color)
 (provide 'init-theme)

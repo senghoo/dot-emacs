@@ -40,6 +40,9 @@
 (require 'init-git)
 (require 'init-auto-complete)
 (require 'init-yasnippet)
+(require 'init-prodigy)
+(require 'init-ein)
+
 ;;lang support
 (require 'init-slime)
 (require 'init-lang-python)
@@ -47,6 +50,8 @@
 (require 'init-lang-html)
 (require 'init-lang-elisp)
 (require 'init-lang-php)
+(require 'init-lang-go)
+
 ;; some emacs toy
 (require 'init-toy)
 
