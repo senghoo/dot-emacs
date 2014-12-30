@@ -1,5 +1,3 @@
-(require 'auto-complete-clang)
-
 (defun my-c-mode-common-hook ()
   ;; set my personal style for the current buffer
   ;; (c-set-style "gnu")
@@ -13,6 +11,8 @@
         c-tab-always-indent nil
         c-insert-tab-function 'indent-for-tab-command)
   (c-toggle-auto-hungry-state 1)
+  (set (make-local-variable 'company-backends)
+       '((company-clang company-yasnippet company-dabbrev)))
   ;; (c-toggle-auto-newline nil)
   (global-ede-mode ))
 
@@ -26,14 +26,6 @@
       '("/usr/include/"
         "/usr/local/include/"))
 
-;; auto-complete
-
-(setq ac-clang-flags
-      (mapcar (lambda (item)(concat "-I" item))
-              c-header-paths))
-
-(defun ac-cc-mode-setup ()
-  (setq ac-sources (append '(ac-source-clang ac-source-yasnippet ac-source-gtags) ac-sources)))
 
 ;; flycheck
 (setq flycheck-clang-include-path c-header-paths)

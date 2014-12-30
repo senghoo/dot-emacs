@@ -26,9 +26,6 @@
 ;;; On-demand installation of packages
 (require 'cl)
 (defvar prelude-packages '(ace-jump-mode
-                           auto-complete
-                           auto-complete-clang
-                           auto-complete-clang-async
                            color-theme
                            color-theme-sanityinc-tomorrow
                            dired+
@@ -45,8 +42,6 @@
                            highlight-indentation
                            highlight-symbol
                            ibuffer-vc
-                           jedi
-                           jedi-direx
                            magit
                            markdown-mode
                            markdown-mode+

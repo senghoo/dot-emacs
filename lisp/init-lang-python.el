@@ -1,31 +1,14 @@
-(add-to-list 'auto-mode-alist '("\\.wsgi\\'" . python-mode))
+(elpy-enable)
+(setq-default flycheck-flake8-maximum-line-length 120)
+(setq-default elpy-modules (delete 'elpy-module-flymake elpy-modules))
+(defun my-elpy-mode-config ()
+  (setq company-backends (cons '(elpy-company-backend company-yasnippet company-dabbrev-code)
+                               (delq 'elpy-company-backend
+                                     (mapcar #'identity company-backend))))
+  (define-key elpy-mode-map (kbd "M-?") 'elpy-doc)
+  (define-key elpy-mode-map (kbd "C-c C-j") 'helm-imenu))
 
-(eval-after-load "python"
-  '(define-key python-mode-map "\C-cx" 'jedi-direx:pop-to-buffer))
-
-
-;; jedi setup
-
-(require 'jedi)
-(defun jedi-config:setup ()
-  ;; face
-  (set-face-attribute 'jedi:highlight-function-argument t :foreground "Blue")
-  (local-set-key (kbd "M-.") 'jedi:goto-definition)
-  (local-set-key (kbd "M-,") 'jedi:goto-definition-pop-marker)
-  (local-set-key (kbd "M-?") 'jedi:show-doc)
-  (local-set-key (kbd "M-'") 'jedi:get-in-function-call)
-  (local-set-key (kbd "M-/") 'helm-jedi-related-names))
-
-(add-hook 'python-mode-hook 'jedi:setup)
-(add-hook 'python-mode-hook 'jedi-config:setup)
-(add-hook 'jedi-mode-hook 'jedi-direx:setup)
-
-;; jedi
-(setq jedi:complete-on-dot t)
-(setq jedi:install-imenu t)
-(setq jedi:tooltip-method nil)
-
-
+(add-hook 'elpy-mode-hook 'my-elpy-mode-config)
 
 ;; ipython
 (when (executable-find "ipython")

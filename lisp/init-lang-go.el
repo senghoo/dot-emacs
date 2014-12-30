@@ -1,4 +1,3 @@
-(require 'go-autocomplete)
 (load-file "$GOPATH/src/code.google.com/p/go.tools/cmd/oracle/oracle.el")
 (add-to-list 'exec-path "~/Project/gopath/bin")
 (defun my-go-mode-hook ()

@@ -33,8 +33,8 @@
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-undo-tree-mode)
 (global-linum-mode)
-(highlight-symbol-mode)
 (global-hl-line-mode)
+(highlight-symbol-mode)
 (setq-default initial-scratch-message
               (concat ";; Happy hacking Senghoo !\n\n"))
 ;;----------------------------------------------------------------------------
@@ -56,8 +56,8 @@
 (global-set-key (kbd "C-;") 'ace-jump-mode)
 (global-set-key (kbd "M-j") 'ace-jump-mode)
 ;; multiple-cursors
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-+") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 ;; From active region to multiple cursors:
@@ -66,6 +66,7 @@
 (global-set-key (kbd "C-c c c") 'mc/edit-lines)
 (global-set-key (kbd "C-c c e") 'mc/edit-ends-of-lines)
 (global-set-key (kbd "C-c c a") 'mc/edit-beginnings-of-lines)
+(global-set-key (kbd "C-c o") 'iedit-mode)
 
 (global-set-key (kbd "C-x C-z") 'repeat)
 (setq highlight-symbol-on-navigation-p t)
@@ -91,5 +92,7 @@
 (define-key esc-map (kbd "C-r") 'vr/isearch-backward) ;; C-M-r
 (define-key esc-map (kbd "C-s") 'vr/isearch-forward) ;; C-M-s
 
-
+;; auto paren
+(require 'smartparens-config)
+(smartparens-global-mode t)
 (provide 'init-editing-utils)

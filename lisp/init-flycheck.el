@@ -2,7 +2,7 @@
 
 (defun my-flycheck-mode-hook()
   (setq flycheck-check-syntax-automatically '(save idle-change mode-enabled)
-        flycheck-idle-change-delay 0.8
+        flycheck-idle-change-delay 1
         flycheck-display-errors-function 'flycheck-clippy-show-error-messages
         flycheck-indication-mode nil
         flycheck-flake8-maximum-line-length 120))
@@ -22,9 +22,7 @@
                                         'flycheck-clippy-show-error-auto-newline
                                         (-keep #'flycheck-error-message errors) )
                              "\n\n"))
-    (if (popup-live-p ac-menu)
-        (message  msg )
-        (clippy-say msg))))
+     (clippy-say msg)))
 
 
 (provide 'init-flycheck)

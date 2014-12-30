@@ -1,5 +1,5 @@
 ;; (setq inferior-lisp-program "/usr/local/bin/sbcl")
-(setq inferior-lisp-program "/usr/local/Cellar/clozure-cl/1.9/bin/ccl64")
+(setq inferior-lisp-program "/usr/local/Cellar/clozure-cl/1.10/bin/ccl64")
 (setq slime-contribs '(slime-fancy))
 (slime-setup)
 (defun my-slime-mode-hook()

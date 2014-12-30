@@ -38,7 +38,7 @@
 ;; (require 'init-evil)
 ;;develop tools
 (require 'init-git)
-(require 'init-auto-complete)
+(require 'init-company)
 (require 'init-yasnippet)
 (require 'init-prodigy)
 (require 'init-ein)
