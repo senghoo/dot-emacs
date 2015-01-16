@@ -10,19 +10,10 @@
 
 (add-hook 'flycheck-mode-hook 'my-flycheck-mode-hook)
 
-(defun flycheck-clippy-show-error-auto-newline (str)
-  (if (< (string-width str) 60)
-      str
-      (concat (substring str 0 60)
-              "\n"
-              (flycheck-clippy-show-error-auto-newline (substring str 60)))))
-
 (defun flycheck-clippy-show-error-messages (errors)
-  (-when-let (msg (mapconcat 'identity (mapcar
-                                        'flycheck-clippy-show-error-auto-newline
-                                        (-keep #'flycheck-error-message errors) )
+  (-when-let (msg (mapconcat 'identity (-keep #'flycheck-error-message errors)
                              "\n\n"))
-     (clippy-say msg)))
+    (clippy-say msg (- (min (- (window-body-width) (current-column)) 80) 15))))
 
 
 (provide 'init-flycheck)

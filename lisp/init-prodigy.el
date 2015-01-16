@@ -8,4 +8,5 @@
   :port 8888
   :stop-signal 'kill
   :kill-signal 'sigkill)
+(global-set-key (kbd "C-\\") 'prodigy)
 (provide 'init-prodigy)

@@ -11,9 +11,12 @@
         c-tab-always-indent nil
         c-insert-tab-function 'indent-for-tab-command)
   (c-toggle-auto-hungry-state 1)
-  (set (make-local-variable 'company-backends)
-       '((company-clang company-yasnippet company-dabbrev)))
   ;; (c-toggle-auto-newline nil)
+  (set (make-local-variable 'company-backends)
+       '(company-clang
+         company-yasnippet
+         (company-dabbrev-code company-gtags company-etags company-keywords)
+         company-files company-dabbrev))
   (global-ede-mode ))
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)

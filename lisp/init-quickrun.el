@@ -3,5 +3,5 @@
                         (:exec . "%c deploy")
                         (:description "Deploy sae app"))
                       :mode 'python-mode)
-(global-set-key (kbd "C-z") 'helm-quickrun)
+(global-set-key (kbd "C-q") 'helm-quickrun)
 (provide 'init-quickrun)

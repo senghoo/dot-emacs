@@ -1,4 +1,6 @@
 ;; (global-set-key (kbd "C-x z") 'zone)
 (require 'clippy)
 (setq clippy-tip-show-function #'clippy-popup-tip-show)
+(global-set-key "\C-cd" 'dash-at-point)
+(global-set-key "\C-ce" 'dash-at-point-with-docset)
 (provide 'init-toy)

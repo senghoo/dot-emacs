@@ -94,8 +94,8 @@ columns."
 (defun clippy-tip (text &optional fill)
   (with-temp-buffer
      (insert text)
-     (when fill
-       (let ((fill-column 72)) (clippy--fill-buffer))
+     (when (numberp fill)
+       (let ((fill-column fill)) (clippy--fill-buffer))
        (setq text (buffer-string)))
      (let* ((longest-line (clippy--get-longest-line (point-min) (point-max)))
             (longest-line-margin (+ 2 longest-line))

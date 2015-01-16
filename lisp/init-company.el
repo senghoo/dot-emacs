@@ -4,8 +4,6 @@
   (setq-default company-auto-complete t)
   (global-key-binding (kbd "<C-tab>") 'company-manual-begin)
   (define-key company-mode-map (kbd "C-c C-y") 'company-yasnippet)
-  (define-key company-active-map [tab] 'company-select-next)
-  (define-key company-active-map (kbd "TAB") 'company-select-next)
   (define-key company-active-map (kbd "C-n") 'company-select-next)
   (define-key company-active-map (kbd "C-p") 'company-select-previous))
 

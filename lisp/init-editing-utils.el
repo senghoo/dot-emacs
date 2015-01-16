@@ -53,14 +53,10 @@
 (global-set-key (kbd "C-c j") 'join-line)
 (global-set-key (kbd "C-c J") (lambda () (interactive) (join-line 1)))
 (global-set-key (kbd "C-x C-.") 'pop-global-mark)
-(global-set-key (kbd "C-;") 'ace-jump-mode)
 (global-set-key (kbd "M-j") 'ace-jump-mode)
 ;; multiple-cursors
-;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-+") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-;; From active region to multiple cursors:
 
 (global-set-key (kbd "C-c c r") 'set-rectangular-region-anchor)
 (global-set-key (kbd "C-c c c") 'mc/edit-lines)
@@ -68,7 +64,7 @@
 (global-set-key (kbd "C-c c a") 'mc/edit-beginnings-of-lines)
 (global-set-key (kbd "C-c o") 'iedit-mode)
 
-(global-set-key (kbd "C-x C-z") 'repeat)
+(global-set-key (kbd "C-z") 'repeat)
 (setq highlight-symbol-on-navigation-p t)
 (global-set-key (kbd "M-n") 'highlight-symbol-next)
 (global-set-key (kbd "M-p") 'highlight-symbol-prev)
@@ -86,7 +82,6 @@
 (define-key global-map (kbd "C-r") 'vr/isearch-backward)
 (define-key global-map (kbd "C-s") 'vr/isearch-forward)
 (define-key global-map (kbd "M-,") 'pop-tag-mark)
-(global-set-key (kbd "C-c C-j") 'imenu)
 
 ;; to use visual-regexp-steroids's isearch instead of the built-in regexp isearch, also include the following lines:
 (define-key esc-map (kbd "C-r") 'vr/isearch-backward) ;; C-M-r
