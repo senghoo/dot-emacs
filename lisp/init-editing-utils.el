@@ -65,6 +65,7 @@
 (global-set-key (kbd "C-c o") 'iedit-mode)
 
 (global-set-key (kbd "C-z") 'repeat)
+(global-set-key (kbd "M-z") 'zap-to-char)
 (setq highlight-symbol-on-navigation-p t)
 (global-set-key (kbd "M-n") 'highlight-symbol-next)
 (global-set-key (kbd "M-p") 'highlight-symbol-prev)

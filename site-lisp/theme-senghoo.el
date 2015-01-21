@@ -46,17 +46,22 @@
                 '("%e"
                   (:eval
                    (let* ((active (powerline-selected-window-active))
+                          (face1 (if active 'powerline-active1 'powerline-inactive1))
+                          (face2 (if active 'powerline-active2 'powerline-inactive2))
+                          (state-face (if evil-mode
+                                          (if active (spacemacs/current-state-face) face2)
+                                        nil))
                           (separator-left (intern (format "powerline-%s-%s"
                                                           powerline-default-separator
                                                           (car powerline-default-separator-dir))))
                           (separator-right (intern (format "powerline-%s-%s"
                                                            powerline-default-separator
                                                            (cdr powerline-default-separator-dir))))
-                          (lhs (list (powerline-raw "%*" 'powerline-senghoo-1 'l)
-                                     ;; (powerline-raw evil-mode-line-tag 'powerline-senghoo-1 'l)
-                                     ;; (powerline-raw
-                                     ;;  (eval (evil-state-property evil-state :name))
-                                     ;;  'powerline-senghoo-1 'l)
+                          (lhs (list (if evil-mode
+                                         (powerline-raw (evil-state-property evil-state :tag t) state-face)
+                                       "")
+                                     (powerline-raw "%*" 'powerline-senghoo-1 'l)
+
                                      (powerline-major-mode 'powerline-senghoo-1 'l)
                                      (powerline-raw " " 'powerline-senghoo-1 'l)
                                      (powerline-raw "%b " 'powerline-senghoo-2 'l)

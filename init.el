@@ -35,7 +35,7 @@
 (require 'init-editing-utils)
 (require 'init-projectile)
 (require 'init-quickrun)
-;; (require 'init-evil)
+(require 'init-evil)
 ;;develop tools
 (require 'init-git)
 (require 'init-company)

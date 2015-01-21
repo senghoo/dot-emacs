@@ -5,6 +5,8 @@
   (setq company-backends (cons '(elpy-company-backend company-yasnippet company-dabbrev-code)
                                (delq 'elpy-company-backend
                                      (mapcar #'identity company-backend))))
+  (define-key elpy-mode-map (kbd "C-M-n") 'elpy-nav-forward-block)
+  (define-key elpy-mode-map (kbd "C-M-p") 'elpy-nav-backward-block)
   (define-key elpy-mode-map (kbd "M-?") 'elpy-doc)
   (define-key elpy-mode-map (kbd "C-c C-j") 'helm-imenu))
 

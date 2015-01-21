@@ -42,3 +42,4 @@ url
 /.python-environments/
 /projectile.cache
 /recentf
+/.tutor/
