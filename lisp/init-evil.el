@@ -2,6 +2,7 @@
 (global-evil-leader-mode)
 (global-evil-surround-mode 1)
 (global-evil-matchit-mode 1)
+(evil-escape-mode)
 
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key "SPC" 'evil-ace-jump-word-mode)
@@ -10,7 +11,12 @@
 (evil-leader/set-key "1" 'delete-other-windows)
 (evil-leader/set-key "2" 'split-window-below)
 (evil-leader/set-key "3" 'split-window-horizontally)
+(evil-leader/set-key "e" 'evil-end-of-line)
+(evil-leader/set-key "a" 'evil-beginning-of-line)
 
+
+(add-to-list 'evil-emacs-state-modes 'anaconda-nav-mode)
+(add-to-list 'evil-emacs-state-modes 'git-timemachine-mode)
 
 (defun spacemacs/state-color-face (state)
   "Return the symbol of the face for the given STATE."
@@ -86,5 +92,8 @@
 (set-default-evil-lisp-state-cursor)
 
 (evil-mode 1)
+
+(define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)
+(define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt)
 
 (provide 'init-evil)

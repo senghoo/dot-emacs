@@ -43,3 +43,4 @@ url
 /projectile.cache
 /recentf
 /.tutor/
+/lisp/init-quickrun.el

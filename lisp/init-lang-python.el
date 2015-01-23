@@ -1,17 +1,13 @@
-(elpy-enable)
-(setq-default flycheck-flake8-maximum-line-length 120)
-(setq-default elpy-modules (delete 'elpy-module-flymake elpy-modules))
-(defun my-elpy-mode-config ()
-  (setq company-backends (cons '(elpy-company-backend company-yasnippet company-dabbrev-code)
-                               (delq 'elpy-company-backend
-                                     (mapcar #'identity company-backend))))
-  (define-key elpy-mode-map (kbd "C-M-n") 'elpy-nav-forward-block)
-  (define-key elpy-mode-map (kbd "C-M-p") 'elpy-nav-backward-block)
-  (define-key elpy-mode-map (kbd "M-?") 'elpy-doc)
-  (define-key elpy-mode-map (kbd "C-c C-j") 'helm-imenu))
-
-(add-hook 'elpy-mode-hook 'my-elpy-mode-config)
-
+(add-hook 'python-mode-hook 'anaconda-mode)
+(add-hook 'python-mode-hook 'eldoc-mode)
+(defun my-anaconda-mode ()
+  (evil-leader/set-key-for-mode 'python-mode
+    "." 'anaconda-mode-goto-definitions
+    "*" 'anaconda-nav-pop-marker
+    "?" 'anaconda-mode-view-doc
+    "r" 'anaconda-mode-usages)
+  (add-to-list 'company-backends 'company-anaconda))
+(add-hook 'anaconda-mode-hook 'my-anaconda-mode)
 ;; ipython
 (when (executable-find "ipython")
   (setq
