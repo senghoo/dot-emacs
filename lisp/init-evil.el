@@ -17,6 +17,8 @@
 
 (add-to-list 'evil-emacs-state-modes 'anaconda-nav-mode)
 (add-to-list 'evil-emacs-state-modes 'git-timemachine-mode)
+(add-to-list 'evil-emacs-state-modes 'quickrun/mode)
+
 
 (defun spacemacs/state-color-face (state)
   "Return the symbol of the face for the given STATE."

@@ -3,4 +3,5 @@
 (setq clippy-tip-show-function #'clippy-popup-tip-show)
 (global-set-key "\C-cd" 'dash-at-point)
 (global-set-key "\C-ce" 'dash-at-point-with-docset)
+(global-prettify-symbols-mode 1)
 (provide 'init-toy)

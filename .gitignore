@@ -44,3 +44,4 @@ url
 /recentf
 /.tutor/
 /lisp/init-quickrun.el
+/company-statistics-cache.el
