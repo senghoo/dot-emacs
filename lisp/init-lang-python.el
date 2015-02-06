@@ -1,3 +1,4 @@
+(pyenv-mode)
 (add-hook 'python-mode-hook 'anaconda-mode)
 (add-hook 'python-mode-hook 'eldoc-mode)
 (defun my-anaconda-mode ()
@@ -22,4 +23,10 @@
    python-shell-completion-string-code
    "';'.join(get_ipython().Completer.all_completions('''%s'''))\n"))
 
+(defun projectile-pyenv-mode-set ()
+  "Set pyenv version matching project name.
+Version must be already installed."
+  (pyenv-mode-set (projectile-project-name)))
+
+(add-hook 'projectile-switch-project-hook 'projectile-pyenv-mode-set)
 (provide 'init-lang-python)

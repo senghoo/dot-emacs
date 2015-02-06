@@ -1,6 +1,5 @@
 (defun my-company-mode-config ()
   (company-quickhelp-mode 1)
-  (company-statistics-mode)
   (setq-default company-idle-delay .1)
   (setq-default company-minimum-prefix-length 2)
   (setq-default company-auto-complete 'company-explicit-action-p)

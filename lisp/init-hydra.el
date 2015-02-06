@@ -1,0 +1,9 @@
+(require 'hydra-examples)
+(hydra-create "<f5>"
+  '(("-" text-scale-decrease)
+    ("=" text-scale-increase)
+    ("h" hydra-move-splitter-left)
+    ("j" hydra-move-splitter-down)
+    ("k" hydra-move-splitter-up)
+    ("l" hydra-move-splitter-right)))
+(provide 'init-hydra)

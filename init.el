@@ -28,6 +28,7 @@
 (require 'init-flycheck)
 (require 'init-recentf)
 (require 'init-misc)
+(require 'init-hydra)
 
 ;; (require 'init-ido)
 (require 'init-helm)
