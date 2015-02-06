@@ -1,0 +1,7 @@
+(defun quickrun--discare-shebang (orig-fun cmd-info src)
+  (let ((quickrun-option-shebang (and (not (assoc-default :without-shebang cmd-info))
+                                     quickrun-option-shebang)))
+    (funcall orig-fun cmd-info src)))
+(advice-add 'quickrun/template-argument :around #'quickrun--discare-shebang)
+(global-set-key (kbd "C-q") 'helm-quickrun)
+(provide 'init-quickrun)
