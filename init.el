@@ -64,6 +64,11 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
+(require 'load-directory)
+(setq custom-dir (expand-file-name "custom" user-emacs-directory))
+(if (file-accessible-directory-p custom-dir)
+    ((load-directory custom-dir)))
+
 
 (require 'cl)
 ;; Local Variables:
