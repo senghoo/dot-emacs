@@ -42,6 +42,7 @@
 (defun powerline-senghoo-theme ()
   "Setup the default mode-line."
   (interactive)
+  (setq powerline-selected-window nil)
   (setq-default mode-line-format
                 '("%e"
                   (:eval
