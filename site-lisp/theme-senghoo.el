@@ -64,14 +64,14 @@
                                      (powerline-raw "%*" 'powerline-senghoo-1 'l)
 
                                      (powerline-major-mode 'powerline-senghoo-1 'l)
-                                     (powerline-raw " " 'powerline-senghoo-1 'l)
+                                     (powerline-raw " " 'powerline-senghoo-1)
                                      (powerline-raw "%b " 'powerline-senghoo-2 'l)
                                      (powerline-vc 'powerline-senghoo-3 'l)
                                      (powerline-raw " " 'powerline-senghoo-3 'l)
                                      (nyan-create)))
                           (rhs (list
                                      (powerline-process 'powerline-senghoo-4 'l)
-                                     (powerline-raw " %3p of %I" 'powerline-senghoo-5 'l)
+                                     (powerline-raw "%3p of %I" 'powerline-senghoo-5 'l)
                                      (powerline-raw "%3l" 'powerline-senghoo-6 'l)
                                      (powerline-raw ":" 'powerline-senghoo-6 'l)
                                      (powerline-raw "%3c" 'powerline-senghoo-6 'r)
