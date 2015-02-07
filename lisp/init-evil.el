@@ -105,11 +105,16 @@
 
 ;; evil-leader config
 (evil-leader/set-leader "<SPC>")
-(evil-leader/set-key "SPC" 'evil-ace-jump-word-mode)
-(evil-leader/set-key "l" 'evil-ace-jump-line-mode)
-(evil-leader/set-key "ci" 'evilnc-comment-or-uncomment-lines)
-(evil-leader/set-key "cl" 'evilnc-comment-or-uncomment-to-the-line)
-(evil-leader/set-key "cc" 'evilnc-copy-and-comment-lines)
-(evil-leader/set-key "cp" 'evilnc-comment-or-uncomment-paragraphs)
-(evil-leader/set-key "cr" 'comment-or-uncomment-region)
+(evil-leader/set-key
+  ;; ace jump
+  "SPC" 'evil-ace-jump-word-mode
+  "l" 'evil-ace-jump-line-mode
+  ;; comment
+  "ci" 'evilnc-comment-or-uncomment-lines
+  "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
+  "cc" 'evilnc-copy-and-comment-lines
+  "cp" 'evilnc-comment-or-uncomment-paragraphs
+  "cr" 'comment-or-uncomment-region
+  "cv" 'evilnc-toggle-invert-comment-line-by-line
+  "c\\" 'evilnc-comment-operator)
 (provide 'init-evil)
