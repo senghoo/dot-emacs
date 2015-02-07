@@ -5,10 +5,9 @@
 (global-evil-matchit-mode 1)
 (evil-exchange-install)
 (evil-escape-mode)
-(define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
-(define-key evil-outer-text-objects-map "a" 'evil-outer-arg)
+(evil-jumper-mode)
 
-;; evil configure 
+;; evil configure
 (defun spacemacs/state-color-face (state)
   "Return the symbol of the face for the given STATE."
   (intern (format "spacemacs-%s-face" (symbol-name state))))
@@ -108,14 +107,9 @@
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key "SPC" 'evil-ace-jump-word-mode)
 (evil-leader/set-key "l" 'evil-ace-jump-line-mode)
-(evil-leader/set-key "0" 'delete-window)
-(evil-leader/set-key "1" 'delete-other-windows)
-(evil-leader/set-key "2" 'split-window-below)
-(evil-leader/set-key "3" 'split-window-horizontally)
 (evil-leader/set-key "ci" 'evilnc-comment-or-uncomment-lines)
 (evil-leader/set-key "cl" 'evilnc-comment-or-uncomment-to-the-line)
 (evil-leader/set-key "cc" 'evilnc-copy-and-comment-lines)
 (evil-leader/set-key "cp" 'evilnc-comment-or-uncomment-paragraphs)
 (evil-leader/set-key "cr" 'comment-or-uncomment-region)
-
 (provide 'init-evil)
