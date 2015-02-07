@@ -1,25 +1,14 @@
+;; evil module
 (evil-mode 1)
 (global-evil-leader-mode)
 (global-evil-surround-mode 1)
 (global-evil-matchit-mode 1)
+(evil-exchange-install)
 (evil-escape-mode)
+(define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
+(define-key evil-outer-text-objects-map "a" 'evil-outer-arg)
 
-(evil-leader/set-leader "<SPC>")
-(evil-leader/set-key "SPC" 'evil-ace-jump-word-mode)
-(evil-leader/set-key "l" 'evil-ace-jump-line-mode)
-(evil-leader/set-key "0" 'delete-window)
-(evil-leader/set-key "1" 'delete-other-windows)
-(evil-leader/set-key "2" 'split-window-below)
-(evil-leader/set-key "3" 'split-window-horizontally)
-(evil-leader/set-key "e" 'evil-end-of-line)
-(evil-leader/set-key "a" 'evil-beginning-of-line)
-
-
-(add-to-list 'evil-emacs-state-modes 'anaconda-nav-mode)
-(add-to-list 'evil-emacs-state-modes 'git-timemachine-mode)
-(add-to-list 'evil-emacs-state-modes 'quickrun/mode)
-
-
+;; evil configure 
 (defun spacemacs/state-color-face (state)
   "Return the symbol of the face for the given STATE."
   (intern (format "spacemacs-%s-face" (symbol-name state))))
@@ -93,9 +82,40 @@
 (set-default-evil-motion-state-cursor)
 (set-default-evil-lisp-state-cursor)
 
+(add-to-list 'evil-emacs-state-modes 'anaconda-nav-mode)
+(add-to-list 'evil-emacs-state-modes 'git-timemachine-mode)
+(add-to-list 'evil-emacs-state-modes 'quickrun/mode)
+
 (evil-mode 1)
 
 (define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)
 (define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt)
+
+
+;; evil-args
+;; bind evil-args text objects
+(define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
+(define-key evil-outer-text-objects-map "a" 'evil-outer-arg)
+;; bind evil-forward/backward-args
+(define-key evil-normal-state-map "L" 'evil-forward-arg)
+(define-key evil-normal-state-map "H" 'evil-backward-arg)
+(define-key evil-motion-state-map "L" 'evil-forward-arg)
+(define-key evil-motion-state-map "H" 'evil-backward-arg)
+;; bind evil-jump-out-args
+(define-key evil-normal-state-map "K" 'evil-jump-out-args)
+
+;; evil-leader config
+(evil-leader/set-leader "<SPC>")
+(evil-leader/set-key "SPC" 'evil-ace-jump-word-mode)
+(evil-leader/set-key "l" 'evil-ace-jump-line-mode)
+(evil-leader/set-key "0" 'delete-window)
+(evil-leader/set-key "1" 'delete-other-windows)
+(evil-leader/set-key "2" 'split-window-below)
+(evil-leader/set-key "3" 'split-window-horizontally)
+(evil-leader/set-key "ci" 'evilnc-comment-or-uncomment-lines)
+(evil-leader/set-key "cl" 'evilnc-comment-or-uncomment-to-the-line)
+(evil-leader/set-key "cc" 'evilnc-copy-and-comment-lines)
+(evil-leader/set-key "cp" 'evilnc-comment-or-uncomment-paragraphs)
+(evil-leader/set-key "cr" 'comment-or-uncomment-region)
 
 (provide 'init-evil)
