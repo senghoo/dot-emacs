@@ -91,12 +91,5 @@
   (set-face-attribute 'rainbow-delimiters-depth-7-face nil :foreground "#8abeb7")
   (set-face-attribute 'rainbow-delimiters-depth-8-face nil :foreground "#f0c674")
   (set-face-attribute 'rainbow-delimiters-depth-9-face nil :foreground "#b5bd68")
-  (set-face-attribute 'rainbow-delimiters-unmatched-face nil  :foreground "black" :background "red")
-  (let ((bg "#1d1f21"))
-    (custom-set-faces
-     `(company-tooltip ((t (:inherit default :background ,(color-lighten-name bg 2)))))
-     `(company-scrollbar-bg ((t (:background ,(color-lighten-name bg 10)))))
-     `(company-scrollbar-fg ((t (:background ,(color-lighten-name bg 5)))))
-     `(company-tooltip-selection ((t (:inherit font-lock-function-name-face))))
-     `(company-tooltip-common ((t (:inherit font-lock-constant-face)))))))
+  (set-face-attribute 'rainbow-delimiters-unmatched-face nil  :foreground "black" :background "red"))
 (provide 'theme-senghoo)
