@@ -2,6 +2,8 @@
 (add-hook 'python-mode-hook 'anaconda-mode)
 (add-hook 'python-mode-hook 'eldoc-mode)
 (defun my-anaconda-mode ()
+  (fci-mode)
+  (setq fci-rule-column 80)
   (evil-leader/set-key-for-mode 'python-mode
     "." 'anaconda-mode-goto-definitions
     "*" 'anaconda-nav-pop-marker

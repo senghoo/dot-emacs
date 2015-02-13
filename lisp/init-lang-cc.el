@@ -9,7 +9,9 @@
         c-default-style "linux"
         c-electric-flag nil
         c-tab-always-indent nil
-        c-insert-tab-function 'indent-for-tab-command)
+        c-insert-tab-function 'indent-for-tab-command
+        fci-rule-column 80)
+  (fci-mode)
   (c-toggle-auto-hungry-state 1)
   ;; (c-toggle-auto-newline nil)
   (set (make-local-variable 'company-backends)
