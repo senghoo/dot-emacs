@@ -84,11 +84,17 @@
 (add-to-list 'evil-emacs-state-modes 'anaconda-nav-mode)
 (add-to-list 'evil-emacs-state-modes 'git-timemachine-mode)
 (add-to-list 'evil-emacs-state-modes 'quickrun/mode)
+(add-to-list 'evil-emacs-state-modes 'prodigy-mode)
+(add-to-list 'evil-emacs-state-modes 'paradox-menu-mode)
+(add-to-list 'evil-emacs-state-modes 'paradox-commit-list-mode)
+(add-to-list 'evil-emacs-state-modes 'sx-question-list-mode)
+(add-to-list 'evil-emacs-state-modes 'sx-question-mode)
 
 (evil-mode 1)
 
 (define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)
 (define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt)
+(define-key evil-normal-state-map (kbd "C-p") 'helm-show-kill-ring)
 
 
 ;; evil-args

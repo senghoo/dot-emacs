@@ -4,7 +4,6 @@
 
 ;;; Standard package repositories
 
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 ;; We include the org repository for completeness, but don't normally
 ;; use it.
@@ -84,7 +83,11 @@
     (when (not (package-installed-p p))
       (package-install p))))
 
+;; (defun no-proxy-advice (orig-fun)
+;;     (let ((url-proxy-services nil))
+;;        (funcall orig-fun)))
 
+;; (advice-add 'paradox--refresh-star-count :around #'no-proxy-advice)
 
 
 (provide 'init-elpa)
