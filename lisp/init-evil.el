@@ -4,7 +4,7 @@
 (global-evil-surround-mode 1)
 (global-evil-matchit-mode 1)
 (evil-exchange-install)
-(evil-escape-mode)
+;; (evil-escape-mode)
 (evil-jumper-mode)
 
 ;; evil configure
@@ -95,6 +95,7 @@
 (define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)
 (define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt)
 (define-key evil-normal-state-map (kbd "C-p") 'helm-show-kill-ring)
+(define-key evil-normal-state-map (kbd "Q") 'evil-execute-macro)
 
 
 ;; evil-args
