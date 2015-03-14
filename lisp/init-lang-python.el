@@ -5,10 +5,10 @@
   (fci-mode)
   (setq fci-rule-column 80)
   (evil-leader/set-key-for-mode 'python-mode
-    "." 'anaconda-mode-goto-definitions
-    "*" 'anaconda-nav-pop-marker
-    "?" 'anaconda-mode-view-doc
-    "r" 'anaconda-mode-usages)
+    "m." 'anaconda-mode-goto-definitions
+    "m," 'anaconda-nav-pop-marker
+    "m?" 'anaconda-mode-view-doc
+    "m/" 'anaconda-mode-usages)
   (add-to-list 'company-backends 'company-anaconda))
 (add-hook 'anaconda-mode-hook 'my-anaconda-mode)
 ;; ipython
@@ -25,10 +25,4 @@
    python-shell-completion-string-code
    "';'.join(get_ipython().Completer.all_completions('''%s'''))\n"))
 
-(defun projectile-pyenv-mode-set ()
-  "Set pyenv version matching project name.
-Version must be already installed."
-  (pyenv-mode-set (projectile-project-name)))
-
-(add-hook 'projectile-switch-project-hook 'projectile-pyenv-mode-set)
 (provide 'init-lang-python)

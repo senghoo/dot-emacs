@@ -89,6 +89,8 @@
 (add-to-list 'evil-emacs-state-modes 'paradox-commit-list-mode)
 (add-to-list 'evil-emacs-state-modes 'sx-question-list-mode)
 (add-to-list 'evil-emacs-state-modes 'sx-question-mode)
+(add-to-list 'evil-emacs-state-modes 'ein:notebooklist-mode)
+(add-to-list 'evil-emacs-state-modes 'flycheck-error-list-mode)
 
 (evil-mode 1)
 
