@@ -15,10 +15,11 @@
   (c-toggle-auto-hungry-state 1)
   ;; (c-toggle-auto-newline nil)
   (set (make-local-variable 'company-backends)
-       '(company-clang
-         company-yasnippet
-         (company-dabbrev-code company-gtags company-etags company-keywords)
-         company-files company-dabbrev))
+       (delete 'company-semantic company-backends))
+  (add-to-list 'company-backends 'company-c-headers)
+  (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+    (my-gtag-mode))
+  (highlight-indentation-mode)
   (global-ede-mode ))
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)

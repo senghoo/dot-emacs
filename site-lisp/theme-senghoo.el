@@ -92,4 +92,11 @@
   (set-face-attribute 'rainbow-delimiters-depth-8-face nil :foreground "#f0c674")
   (set-face-attribute 'rainbow-delimiters-depth-9-face nil :foreground "#b5bd68")
   (set-face-attribute 'rainbow-delimiters-unmatched-face nil  :foreground "black" :background "red"))
+
+(defun highlight-indentation-face-color()
+  (set-face-stipple 'highlight-indentation-face (list 7 4 (string 16 0 0 0)))
+  (set-face-stipple 'highlight-indentation-current-column-face (list 7 4 (string 16 0 0 0))))
+
+;;(add-hook 'highlight-indentation-mode-hook 'highlight-indentation-face-color)
+
 (provide 'theme-senghoo)

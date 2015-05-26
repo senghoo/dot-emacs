@@ -33,7 +33,7 @@
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-undo-tree-mode)
 (global-linum-mode)
-(global-hl-line-mode)
+;; (global-hl-line-mode)
 (highlight-symbol-mode)
 (setq-default initial-scratch-message
               (concat ";; Happy hacking Senghoo !\n\n"))
@@ -77,7 +77,7 @@
 
 ;; visual regexp
 (require 'visual-regexp-steroids)
-(set-default 'vr/command-python (format "python %s" (expand-file-name "extra/scripts/regexp.py" user-emacs-directory)))
+;;(set-default 'vr/command-python (format "python %s" (expand-file-name "extra/scripts/regexp.py" user-emacs-directory)))
 (define-key global-map (kbd "C-c r") 'vr/replace)
 (define-key global-map (kbd "C-c q") 'vr/query-replace)
 (define-key global-map (kbd "C-r") 'vr/isearch-backward)

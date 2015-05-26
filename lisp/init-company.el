@@ -2,7 +2,7 @@
   ;; (company-quickhelp-mode 1)
   (setq-default company-idle-delay .1)
   (setq-default company-minimum-prefix-length 2)
-  (setq-default company-auto-complete 'company-explicit-action-p)
+  (setq-default compaony-auto-complete 'company-explicit-action-p)
   (global-key-binding (kbd "<C-tab>") 'company-manual-begin)
   (define-key company-mode-map (kbd "C-c C-y") 'company-yasnippet)
   (define-key company-active-map (kbd "C-n") 'company-select-next)

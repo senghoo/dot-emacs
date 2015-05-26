@@ -37,6 +37,7 @@
 (require 'init-projectile)
 (require 'init-quickrun)
 (require 'init-evil)
+(require 'init-gtags)
 
 ;;develop tools
 (require 'init-git)

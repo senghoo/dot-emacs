@@ -1,15 +1,27 @@
 (pyenv-mode)
 (add-hook 'python-mode-hook 'anaconda-mode)
 (add-hook 'python-mode-hook 'eldoc-mode)
+
+(defun anaconda-mode-goto-definitions-or-assignments ()
+  (interactive)
+  (anaconda-nav-navigate
+   (or (anaconda-mode-call "goto_definitions")
+       (anaconda-mode-call "goto_assignments")
+       (error "No assignment found"))
+   t))
+
 (defun my-anaconda-mode ()
   (fci-mode)
   (setq fci-rule-column 80)
   (evil-leader/set-key-for-mode 'python-mode
-    "m." 'anaconda-mode-goto-definitions
-    "m," 'anaconda-nav-pop-marker
-    "m?" 'anaconda-mode-view-doc
-    "m/" 'anaconda-mode-usages)
-  (add-to-list 'company-backends 'company-anaconda))
+    ",." 'anaconda-mode-goto-definitions-or-assignments
+    ",," 'anaconda-nav-pop-marker
+    ",?" 'anaconda-mode-view-doc
+    ",/" 'anaconda-mode-usages)
+  (add-to-list 'company-backends 'company-anaconda)
+  (highlight-indentation-mode)
+  (my-gtag-mode)
+  (setq imenu-create-index-function 'python-imenu-create-index))
 (add-hook 'anaconda-mode-hook 'my-anaconda-mode)
 ;; ipython
 (when (executable-find "ipython")

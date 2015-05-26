@@ -6,6 +6,7 @@
 (evil-exchange-install)
 ;; (evil-escape-mode)
 (evil-jumper-mode)
+(require 'evil-iedit-state)
 
 ;; evil configure
 (defun spacemacs/state-color-face (state)
@@ -97,7 +98,7 @@
 (define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)
 (define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt)
 (define-key evil-normal-state-map (kbd "C-p") 'helm-show-kill-ring)
-(define-key evil-normal-state-map (kbd "Q") 'evil-execute-macro)
+(define-key evil-normal-state-map (kbd "M-q") 'evil-execute-macro)
 
 
 ;; evil-args
@@ -111,13 +112,11 @@
 (define-key evil-motion-state-map "H" 'evil-backward-arg)
 ;; bind evil-jump-out-args
 (define-key evil-normal-state-map "K" 'evil-jump-out-args)
+(define-key evil-normal-state-map (kbd "SPC") 'evil-ace-jump-word-mode)
 
 ;; evil-leader config
-(evil-leader/set-leader "<SPC>")
+(evil-leader/set-leader ",")
 (evil-leader/set-key
-  ;; ace jump
-  "SPC" 'evil-ace-jump-word-mode
-  "l" 'evil-ace-jump-line-mode
   ;; comment
   "ci" 'evilnc-comment-or-uncomment-lines
   "cl" 'evilnc-quick-comment-or-uncomment-to-the-line
@@ -125,5 +124,6 @@
   "cp" 'evilnc-comment-or-uncomment-paragraphs
   "cr" 'comment-or-uncomment-region
   "cv" 'evilnc-toggle-invert-comment-line-by-line
-  "c\\" 'evilnc-comment-operator)
+  "c\\" 'evilnc-comment-operator
+  "i" 'helm-semantic-or-imenu)
 (provide 'init-evil)
