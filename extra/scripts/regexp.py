@@ -15,8 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with visual-regexp-steroids.  If not, see <http://www.gnu.org/licenses/>.
 
-import sys
-import re
+import sys, re, base64
 
 # True if we are running on Python 3.
 PY3 = sys.version_info[0] == 3
@@ -32,14 +31,11 @@ argv = sys.argv
 BOOL_ARGS = ('--eval', '--feedback', '--backwards')
 STR_ARGS = ('--regexp', '--replace', )
 INT_ARGS = ('--feedback-limit', )
-
-
 def parse_arg(arg, required=True):
     if not required and arg not in sys.argv:
         return None
     if arg in BOOL_ARGS:
         return arg in sys.argv
-
     def lookahead():
         try:
             return sys.argv[sys.argv.index(arg)+1]
@@ -51,10 +47,8 @@ def parse_arg(arg, required=True):
         return int(lookahead())
     raise Exception("Unrecognized argument: %s" % arg)
 
-
 def escape(s):
-    return s.replace('\\','\\\\').replace('\n', '\\n')
-
+    return base64.b64encode(s.encode('utf8')).decode('utf8')
 
 def message(msg):
     sys.stdout.write(escape(msg))
@@ -63,7 +57,7 @@ def message(msg):
 if argv[1] == 'matches':
     # output positions of matches
 
-    regexp = "(?i)" + parse_arg('--regexp')
+    regexp = parse_arg('--regexp')
     region = sys.stdin.read()
 
     if not PY3:
@@ -78,7 +72,7 @@ if argv[1] == 'matches':
             if feedback_limit is not None and i >= feedback_limit:
                 break
             # show only if match length is nonzero
-            #if match.start() != match.end(): 
+            #if match.start() != match.end():
             sys.stdout.write(' '.join("%s %s" % span for span in match.regs))
             sys.stdout.write('\n')
         if matches:
@@ -117,7 +111,7 @@ elif argv[1] == "replace":
             replacement = (str if PY3 else unicode)(eval(replace, _globals, _locals))
         else:
             replacement = match.expand(replace)
-        # output one replacement per line 
+        # output one replacement per line
         #if not feedback or match.start() != match.end():
         sys.stdout.write("%s %s " % match.span())
         sys.stdout.write(escape(replacement))
@@ -130,7 +124,7 @@ elif argv[1] == "replace":
 
     try:
         # call eval_replace on each match.
-        # we cannot loop through and replace matches one by one (regexp replacing match.group(0))  because zero-width patterns (i.e. "(A(?=B))") 
+        # we cannot loop through and replace matches one by one (regexp replacing match.group(0))  because zero-width patterns (i.e. "(A(?=B))")
         # are not part of match.group(0) and the regexp would not match again.
         re.sub(regexp, eval_replace, region, count=feedback_limit if feedback and feedback_limit else 0)
         # this line is only for counting matches

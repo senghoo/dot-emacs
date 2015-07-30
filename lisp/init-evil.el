@@ -53,34 +53,16 @@
             (motion . "plum3")
             (lisp   . "HotPink1"))))
 
-(defun set-default-evil-emacs-state-cursor ()
-  (setq evil-emacs-state-cursor `(,(spacemacs/state-color 'emacs) box)))
-
-(defun set-default-evil-normal-state-cursor ()
-  (setq evil-normal-state-cursor `(,(spacemacs/state-color 'normal) box)))
-
-(defun set-default-evil-insert-state-cursor ()
-  (setq evil-insert-state-cursor `(,(spacemacs/state-color 'insert) (bar . 2))))
-
-(defun set-default-evil-visual-state-cursor ()
-  (setq evil-visual-state-cursor `(,(spacemacs/state-color 'visual) (hbar . 2))))
-
-(defun set-default-evil-motion-state-cursor ()
-  (setq evil-motion-state-cursor `(,(spacemacs/state-color 'motion) box)))
-
-(defun set-default-evil-lisp-state-cursor ()
+(defun evil-set-default-cursors ()
+  (setq evil-emacs-state-cursor `(,(spacemacs/state-color 'emacs) box))
+  (setq evil-normal-state-cursor `(,(spacemacs/state-color 'normal) box))
+  (setq evil-insert-state-cursor `(,(spacemacs/state-color 'insert) (bar . 2)))
+  (setq evil-visual-state-cursor `(,(spacemacs/state-color 'visual) (hbar . 2)))
+  (setq evil-motion-state-cursor `(,(spacemacs/state-color 'motion) box))
   (setq evil-lisp-state-cursor `(,(spacemacs/state-color 'lisp) box)))
 
-(defun evil-insert-state-cursor-hide ()
-  (setq evil-insert-state-cursor `(,(spacemacs/state-color 'insert) (hbar . 0))))
-
 (spacemacs/set-state-faces)
-(set-default-evil-emacs-state-cursor)
-(set-default-evil-normal-state-cursor)
-(set-default-evil-insert-state-cursor)
-(set-default-evil-visual-state-cursor)
-(set-default-evil-motion-state-cursor)
-(set-default-evil-lisp-state-cursor)
+;;(evil-set-default-cursors)
 
 (add-to-list 'evil-emacs-state-modes 'anaconda-nav-mode)
 (add-to-list 'evil-emacs-state-modes 'git-timemachine-mode)

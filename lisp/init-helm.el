@@ -27,7 +27,48 @@
       helm-ff-file-name-history-use-recentf t
       helm-M-x-fuzzy-match t
       helm-autoresize-max-height 30
-      helm-locate-command "mdfind %s %s")
+      helm-locate-command "mdfind %s %s"
+      helm-prevent-escaping-from-minibuffer t
+      helm-bookmark-show-location t
+      helm-display-header-line nil
+      helm-split-window-in-side-p t
+      helm-always-two-windows t
+      helm-echo-input-in-header-line t)
+
+;; fuzzy matching setting
+(setq helm-M-x-fuzzy-match t
+      helm-apropos-fuzzy-match t
+      helm-file-cache-fuzzy-match t
+      helm-imenu-fuzzy-match t
+      helm-lisp-fuzzy-completion t
+      helm-locate-fuzzy-match t
+      helm-recentf-fuzzy-match t
+      helm-semantic-fuzzy-match t
+      helm-buffers-fuzzy-matching t)
+
+
+(defun helm-hide-minibuffer-maybe ()
+        (when (with-helm-buffer helm-echo-input-in-header-line)
+          (let ((ov (make-overlay (point-min) (point-max) nil nil t)))
+            (overlay-put ov 'window (selected-window))
+            (overlay-put ov 'face (let ((bg-color (face-background 'default nil)))
+                                    `(:background ,bg-color :foreground ,bg-color)))
+            (setq-local cursor-type nil))))
+(add-hook 'helm-minibuffer-set-up-hook 'helm-hide-minibuffer-maybe)
+
+(defun helm-find-files (arg)
+  "Custom spacemacs implementation for calling helm-find-files-1.
+Removes the automatic guessing of the initial value based on thing at point. "
+  (interactive "P")
+  (let* ((hist          (and arg helm-ff-history (helm-find-files-history)))
+         (default-input hist )
+         (input         (cond ((and (eq major-mode 'dired-mode) default-input)
+                               (file-name-directory default-input))
+                              ((and (not (string= default-input ""))
+                                    default-input))
+                              (t (expand-file-name (helm-current-directory))))))
+    (set-text-properties 0 (length input) nil input)
+    (helm-find-files-1 input )))
 
 
 (provide 'init-helm)

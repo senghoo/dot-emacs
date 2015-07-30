@@ -19,6 +19,7 @@
 ;;----------------------------------------------------------------------------
 
 ;;basic editing
+(require 'init-base)
 (require 'init-theme)
 (require 'init-osx-keys)
 (require 'init-gui-frames)
@@ -54,6 +55,7 @@
 (require 'init-lang-elisp)
 (require 'init-lang-php)
 (require 'init-lang-go)
+(require 'init-lang-clojure)
 
 ;; some emacs toy
 (require 'init-toy)

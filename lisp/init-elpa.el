@@ -14,7 +14,7 @@
 
 ;;; Also use Melpa for most packages
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 ;; But don't take Melpa versions of certain packages
 (setq package-filter-function
       (lambda (package version archive)
@@ -61,8 +61,8 @@
                            yaml-mode
                            yasnippet
                            popwin
-                           php-mode
-                           php-extras)
+                           php-mode)
+
   "A list of packages to ensure are installed at launch.")
 
 
