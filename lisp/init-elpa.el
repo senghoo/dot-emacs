@@ -37,7 +37,6 @@
                            helm
                            helm-flycheck
                            helm-projectile
-                           helm-projectile-all
                            highlight-indentation
                            highlight-symbol
                            ibuffer-vc
@@ -61,6 +60,30 @@
                            yaml-mode
                            yasnippet
                            popwin
+			   nyan-mode
+			   hydra
+                           smartparens
+                           evil
+                           evil-args
+                           evil-escape
+                           evil-exchange
+                           evil-iedit-state
+                           evil-indent-textobject
+                           evil-leader
+                           evil-matchit
+                           evil-nerd-commenter
+                           evil-numbers
+                           evil-surround
+                           company
+                           company-anaconda
+                           company-c-headers
+                           company-quickhelp
+                           company-restclient
+                           slime-company
+                           restclient
+                           prodigy
+                           pyenv-mode
+                           cider
                            php-mode)
 
   "A list of packages to ensure are installed at launch.")

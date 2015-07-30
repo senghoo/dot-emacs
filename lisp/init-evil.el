@@ -5,7 +5,6 @@
 (global-evil-matchit-mode 1)
 (evil-exchange-install)
 ;; (evil-escape-mode)
-(evil-jumper-mode)
 (require 'evil-iedit-state)
 
 ;; evil configure
