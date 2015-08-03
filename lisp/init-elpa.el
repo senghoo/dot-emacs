@@ -49,7 +49,6 @@
                            powerline
                            projectile
                            pyvenv
-                           pyenv
                            pytest
                            rainbow-delimiters
                            slime
