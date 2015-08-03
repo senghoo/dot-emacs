@@ -50,6 +50,8 @@
                            powerline
                            projectile
                            pyvenv
+                           pyenv
+                           pytest
                            rainbow-delimiters
                            slime
                            undo-tree
