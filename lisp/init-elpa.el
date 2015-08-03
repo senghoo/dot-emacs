@@ -86,6 +86,7 @@
                            pyenv-mode
                            cider
                            ido-completing-read+
+                           fill-column-indicator
                            php-mode)
 
   "A list of packages to ensure are installed at launch.")
