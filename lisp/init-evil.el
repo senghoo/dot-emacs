@@ -6,6 +6,7 @@
 (evil-exchange-install)
 ;; (evil-escape-mode)
 (require 'evil-iedit-state)
+(require 'evil-remember-state)
 
 ;; evil configure
 (defun spacemacs/state-color-face (state)
@@ -63,18 +64,9 @@
 (spacemacs/set-state-faces)
 ;;(evil-set-default-cursors)
 
-(add-to-list 'evil-emacs-state-modes 'anaconda-nav-mode)
-(add-to-list 'evil-emacs-state-modes 'git-timemachine-mode)
-(add-to-list 'evil-emacs-state-modes 'quickrun/mode)
-(add-to-list 'evil-emacs-state-modes 'prodigy-mode)
-(add-to-list 'evil-emacs-state-modes 'paradox-menu-mode)
-(add-to-list 'evil-emacs-state-modes 'paradox-commit-list-mode)
-(add-to-list 'evil-emacs-state-modes 'sx-question-list-mode)
-(add-to-list 'evil-emacs-state-modes 'sx-question-mode)
-(add-to-list 'evil-emacs-state-modes 'ein:notebooklist-mode)
-(add-to-list 'evil-emacs-state-modes 'flycheck-error-list-mode)
-
 (evil-mode 1)
+
+(evil-remember-load-state-file)
 
 (define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)
 (define-key evil-normal-state-map (kbd "C-c -") 'evil-numbers/dec-at-pt)
