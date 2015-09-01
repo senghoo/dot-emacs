@@ -86,6 +86,9 @@
                            pyenv-mode
                            cider
                            ido-completing-read+
+                           fill-column-indicator
+                           ggtags
+                           helm-gtags
                            php-mode)
 
   "A list of packages to ensure are installed at launch.")
