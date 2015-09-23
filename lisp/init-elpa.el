@@ -41,6 +41,7 @@
                            highlight-symbol
                            ibuffer-vc
                            magit
+                           git-timemachine
                            markdown-mode
                            markdown-mode+
                            multiple-cursors
@@ -89,7 +90,12 @@
                            fill-column-indicator
                            ggtags
                            helm-gtags
-                           php-mode)
+                           php-mode
+                           go-mode
+                           go-projectile
+                           go-eldoc
+                           company-go
+                           flymake-go)
 
   "A list of packages to ensure are installed at launch.")
 
