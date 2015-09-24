@@ -34,11 +34,12 @@
 
 (advice-add 'evil-emacs-state
             :after
-            (lambda (&rest r)
-              (add-to-list 'evil-emacs-state-modes
-                           major-mode)
-              (setq evil-emacs-state-modes (remove-duplicates evil-emacs-state-modes :test 'eq))
-              (evil-remember-save-state-file)))
+            (lambda (&optional exiting &rest r)
+              (when (not exiting)
+                (add-to-list 'evil-emacs-state-modes
+                             major-mode)
+                (setq evil-emacs-state-modes (remove-duplicates evil-emacs-state-modes :test 'eq))
+                (evil-remember-save-state-file))))
 
 (advice-add 'evil-exit-emacs-state
             :after
