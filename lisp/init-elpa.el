@@ -95,7 +95,14 @@
                            go-projectile
                            go-eldoc
                            company-go
-                           flymake-go)
+                           flymake-go
+                           enh-ruby-mode
+                           robe
+                           yard-mode
+                           docker
+                           docker-tramp
+                           dockerfile-mode
+                           )
 
   "A list of packages to ensure are installed at launch.")
 

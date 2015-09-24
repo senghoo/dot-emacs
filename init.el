@@ -56,6 +56,7 @@
 (require 'init-lang-php)
 (require 'init-lang-go)
 (require 'init-lang-clojure)
+(require 'init-lang-ruby)
 
 ;; some emacs toy
 (require 'init-toy)
